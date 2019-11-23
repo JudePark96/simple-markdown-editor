@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+ <% include partials/head %> 
+</head>
+<body style="height: 100%;">
+<% include partials/menu %>
+
+<div class="container-fluid bg-3"> 
+  <h3 class="text-center"><%= page %></h3><br>
+
+  <% if (articles.length == 0){ %>
+    <h3 class="text-center">Nothing has been posted yet¡.</h3>
+  <% } else{ %>
+    <ul>
+      <% articles.forEach((e) => { %>
+        <li><a href="/article/<%= e.id %>"><h2><%= e.title %> - <%= e.created_at %></h2></a></li>
+      <% }); %> 
+    </ul>
+  <% } %>
+</div>
+
+</body>
+<% include partials/script %>
+</html>

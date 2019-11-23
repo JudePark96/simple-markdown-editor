@@ -20,6 +20,7 @@ module.exports = async () => new Promise((resolve, reject) => {
 
   connection.connect(error => {
     if (error) {
+      console.log(error);
       reject(error);
       return;
     }

@@ -6,10 +6,12 @@
 <body style="height: 100%;">
 <% include partials/menu %>
 
-<div class="container-fluid bg-3">    
+<div class="container-fluid bg-3"> 
   <h3 class="text-center"><%= page %></h3><br>
  
   <form action="/article" method="POST" style="height: 100%;">
+
+    <h2 class="text-center "><input type="text" class="article-title text-center" name="title" placeholder="Enter title of your article."></input></h2>
     <section class="row textarea-padding" style="height:100%">
       <textarea class="col-md-6" id="pad" style="height: 100%" name="content">### HelloWorld</textarea>
       <div class="col-md-6 full-height" id="markdown"></div>
