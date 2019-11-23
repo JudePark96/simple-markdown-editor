@@ -12,8 +12,19 @@
       <%- content %>
   </section>
 </div>
+<div class="btn-group" style="align-items: center; display: flex; justify-content: center; margin-bottom: 3%;">
+    <form action="/article/delete/<%= id %>", method="POST" style=" margin: 1%; padding-left: 2%; padding-right: 2%;"><button 
+      type="submit"
+      class="btn btn-danger"
+      style="font-size:1em;"
+      >Delete</button></form>
 
-<button type="submit" class="btn btn-info center-block apply-button" style="font-size:1em;">apply</button>
+    <form action="/article/update/<%= id %>", method="POST" style=" margin: 1%; padding-left: 2%; padding-right: 2%;"><button 
+        type="submit"
+        class="btn btn-info"
+        style="font-size:1em;"
+      >Update</button></form>
+</div>
 
 
 </body>

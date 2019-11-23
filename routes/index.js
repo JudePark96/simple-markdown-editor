@@ -42,7 +42,6 @@ router.get('/article', async (req, res) => {
 });
 
 router.get('/article/:article_id', async (req, res) => {
-  console.log(req.params.article_id)
   const conn = await con();
   const article = await q(conn, `SELECT * FROM ARTICLE WHERE ID = ${req.params.article_id};`)
     .catch(console.log);
@@ -60,6 +59,12 @@ router.get('/article/:article_id', async (req, res) => {
   );
 });
 
+router.post('/article/delete/:article_id', async (req, res) => {
+  console.log(req.params.article_id);
+  const conn = await con();
+  await q(conn, `DELETE FROM ARTICLE WHERE ID = ${req.params.article_id};`);
+  return res.redirect('/');
+});
 
 
 module.exports = router;
