@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+ <% include partials/head %> 
+</head>
+<body style="height: 100%;">
+<% include partials/menu %>
+
+<div class="container-fluid bg-3"> 
+  <h3 class="text-center"><%= page %></h3><br>
+  <section class="row textarea-padding" style="height:100%; padding: 5%;">
+      <%- content %>
+  </section>
+</div>
+</div>
+</body>
+<% include partials/script %>
+</html>

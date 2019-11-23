@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var flash = require('req-flash');
 var session = require('express-session');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var article = require('./routes/index');
+var me = require('./routes/me');
 
 var app = express();
 
@@ -32,8 +32,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/', article);
+app.use('/me', me);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
